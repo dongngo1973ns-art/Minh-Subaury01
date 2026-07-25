@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* --- 1. CHUẨN HÓA TOÀN TRANG (RESET CSS) --- */
+        /* --- 1. RESET CHUẨN KÍCH THƯỚC TOÀN TRANG --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -35,42 +35,49 @@
             height: 100vh;
             object-fit: cover;
             z-index: -1;
-            filter: brightness(0.65); /* Làm tối nền nhẹ để nổi bật khung nội dung */
+            filter: brightness(0.7); /* Giảm độ sáng video nhẹ để nổi chữ */
         }
 
-        /* --- 3. CẤU HÌNH KHUNG PROFILE CARD --- */
+        /* --- 3. KHUNG PROFILE CARD TRONG SUỐT (GLASSMORPHISM) --- */
         .profile-card {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            
+            /* Nền trong suốt màu trắng đục nhẹ (Không bị đen xì) */
+            background: rgba(255, 255, 255, 0.15) !important;
+            
+            /* Hiệu ứng mờ kính chuẩn mọi trình duyệt */
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            backdrop-filter: blur(16px) saturate(180%);
+            
             color: #ffffff;
             padding: 32px 24px;
             border-radius: 24px;
             text-align: center;
             width: 320px;
             max-width: 90%;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            
+            /* Viền mỏng sáng & Đổ bóng kính */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             overflow: hidden;
         }
 
-        /* --- 4. CĂN GIỮA AVATAR HÌNH TRÒN CHUẨN --- */
+        /* --- 4. AVATAR HÌNH TRÒN CĂN GIỮA TUYỆT ĐỐI --- */
         .profile-card img.avatar {
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.9);
+            border: 3px solid rgba(255, 255, 255, 0.8);
             object-fit: cover;
             display: block;
-            margin: 0 auto 16px auto; /* Căn giữa tuyệt đối */
+            margin: 0 auto 16px auto; /* Căn giữa chính xác */
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
 
         .profile-card img.avatar:hover {
-            transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi di chuột */
+            transform: scale(1.05); /* Hiệu ứng phóng nhẹ khi di chuột */
         }
 
         .profile-card h2 {
@@ -78,64 +85,71 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             margin-bottom: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .profile-card p.location {
             font-size: 13px;
-            color: #e0e0e0;
+            color: #f0f0f0;
             font-style: italic;
             margin-bottom: 20px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
-        /* --- 5. TRẠNG THÁI DISCORD --- */
+        /* --- 5. TRẠNG THÁI DISCORD TRONG SUỐT --- */
         .discord-status {
-            background: rgba(0, 0, 0, 0.45);
+            /* Giảm độ tối xuống mờ nhẹ thay vì đen sì */
+            background: rgba(0, 0, 0, 0.25);
             padding: 12px;
             border-radius: 12px;
             margin-bottom: 20px;
             font-size: 13.5px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
         }
 
         .discord-status span {
             font-weight: bold;
-            color: #5865F2; /* Màu chuẩn Discord */
+            color: #7289da; /* Màu xanh đặc trưng của Discord */
         }
 
         .discord-status p {
             margin-top: 4px;
-            color: #dddddd;
+            color: #ffffff;
         }
 
-        /* --- 6. CÁC NÚT MẠNG XÃ HỘI (CÓ LOGO) --- */
+        /* --- 6. CÁC NÚT MẠNG XÃ HỘI (TRONG SUỐT CÓ LOGO) --- */
         .social-links a {
-            display: flex;               /* Dùng Flexbox căn logo và chữ nằm ngang */
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;                   /* Khoảng cách giữa logo và chữ */
-            background: rgba(255, 255, 255, 0.18);
+            gap: 10px;
+            
+            /* Nút trong suốt mờ ảo */
+            background: rgba(255, 255, 255, 0.2);
             color: #ffffff;
             text-decoration: none;
             padding: 12px;
             margin-bottom: 10px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 600;
             font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.25s ease;
+            backdrop-filter: blur(4px);
         }
 
         .social-links a:last-child {
             margin-bottom: 0;
         }
 
-        /* Kích thước logo */
         .social-links a i {
             font-size: 18px;
         }
 
+        /* Hiệu ứng di chuột sáng lên */
         .social-links a:hover {
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
@@ -143,13 +157,13 @@
 </head>
 <body>
 
-    <!-- VIDEO NỀN (Lưu file video tên "video.mp4" chung thư mục với file này) -->
+    <!-- VIDEO NỀN (Khớp chuẩn tên file Download (1).mp4 trên GitHub của bạn) -->
     <video autoplay muted loop id="bg-video">
-        <source src="file:///G:/Download%20(1).mp4" type="video/mp4">
+        <source src="Download (1).mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ video HTML5.
     </video>
 
-    <!-- KHUNG THÔNG TIN CÁ NHÂN -->
+    <!-- CARD THÔNG TIN CÁ NHÂN -->
     <div class="profile-card">
         <!-- Ảnh đại diện -->
         <img src="https://i.pinimg.com/736x/d4/75/3a/d4753afb229798ae94d393f78be683b3.jpg" alt="Avatar Subaury" class="avatar">
