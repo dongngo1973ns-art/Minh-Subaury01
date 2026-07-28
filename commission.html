@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khung Trong Suốt - Subaury</title>
   <style>
-    /* 1. Thiết lập Căn chỉnh & Nền (Background) toàn trang */
     * {
       margin: 0;
       padding: 0;
@@ -37,13 +36,13 @@
       z-index: 0;
     }
 
-    /* 2. Khung trong suốt (Glassmorphism Container) */
+    /* Khung trong suốt (Glassmorphism Container) */
     .transparent-box {
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 500px;
-      padding: 40px 30px;
+      max-width: 650px;
+      padding: 30px 25px;
       border-radius: 20px;
       
       /* Màu nền trắng trong suốt 15% */
@@ -61,19 +60,42 @@
       text-align: center;
     }
 
-    h2 {
-      font-size: 26px;
-      margin-bottom: 15px;
-      color: #e6faf6;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    /* Style cho Bảng 4 Cột x 5 Hàng */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    p {
+    .custom-table th, 
+    .custom-table td {
+      padding: 12px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Chữ Interface ở trên cùng bên trái */
+    .custom-table th.top-left {
+      text-align: left;
+      font-weight: 700;
+      color: #e6faf6;
+      background: rgba(255, 255, 255, 0.2);
       font-size: 16px;
-      color: #f0f0f0;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      text-shadow: 0 0 10px rgba(230, 250, 246, 0.5);
+    }
+
+    .custom-table th {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .custom-table tr:hover {
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* Nút Quay lại trang my-page.html */
@@ -103,12 +125,64 @@
 
   <!-- Khung trong suốt -->
   <div class="transparent-box">
-    <h2>Khung Trong Suốt 🚀</h2>
-    <p>Bạn có thể thêm nội dung, bảng giá, form đăng nhập hoặc hình ảnh vào bên trong khung này.</p>
     
+    <!-- Bảng 4 Cột x 5 Hàng -->
+    <table class="custom-table">
+      <thead>
+        <!-- Hàng 1 -->
+        <tr>
+          <th class="top-left">Interface</th>
+          <th>Cột 2</th>
+          <th>Cột 3</th>
+          <th>Cột 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hàng 2 -->
+        <tr>
+          <td>Mục 1</td>
+          <td>Dữ liệu 1</td>
+          <td>Dữ liệu 2</td>
+          <td>Dữ liệu 3</td>
+        </tr>
+        <!-- Hàng 3 -->
+        <tr>
+          <td>Mục 2</td>
+          <td>Dữ liệu 4</td>
+          <td>Dữ liệu 5</td>
+          <td>Dữ liệu 6</td>
+        </tr>
+        <!-- Hàng 4 -->
+        <tr>
+          <td>Mục 3</td>
+          <td>Dữ liệu 7</td>
+          <td>Dữ liệu 8</td>
+          <td>Dữ liệu 9</td>
+        </tr>
+        <!-- Hàng 5 -->
+        <tr>
+          <td>Mục 4</td>
+          <td>Dữ liệu 10</td>
+          <td>Dữ liệu 11</td>
+          <td>Dữ liệu 12</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- MỤC LIÊN HỆ CỐ ĐỊNH GÓC DƯỚI BÊN PHẢI MÀN HÌNH -->
+    <div class="fixed-bottom-right">
+        <a href="tel:0765810673">
+            <i class="fa-solid fa-phone"></i> 0765 810 673
+        </a>
+        <a href="mailto:1450080165@sv.hcmunre.edu.vn">
+            <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
+        </a>
+    </div>
+   
     <!-- Nút quay lại trang my-page.html -->
-    <a href="my-page.html" class="back-btn">← Quay lại trang trước</a>
+    <a href="my-page.html" class="back-btn">← Back</a>
   </div>
 
 </body>
-</html>
+</html>     
+    
