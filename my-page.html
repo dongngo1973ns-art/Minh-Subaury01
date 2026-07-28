@@ -51,12 +51,108 @@
             width: 100%;
         }
 
+        /* Cập nhật màu H1 thành #e6faf6 cùng hiệu ứng bóng phát sáng */
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #e6faf6;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.6),
+                0 0 15px rgba(230, 250, 246, 0.6), /* Phát sáng xanh mint dịu nhẹ */
+                0 0 30px rgba(0, 225, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #f0f0f0;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .back-btn:hover {
+            background: #ffffff;
+            color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12Mã màu `#e6faf#6` bạn cung cấp bị thừa ký tự `#` ở giữa. Mã HEX chính xác đúng cú pháp CSS sẽ là **`#e6faf6`** (một tông màu xanh lam rất nhạt / xanh mint nhẹ).
+
+Dưới đây là mã HTML hoàn chỉnh đã sửa lại thuộc tính `color` trong class `h1`:
+
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web mới của Subaury</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            /* Đặt hình nền từ file ảnh cùng thư mục */
+            background: url('3192993e72fd3146b6edbe33fe140aab.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Lớp phủ tối nhẹ để làm nổi bật khung chữ */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            max-width: 500px;
+            width: 100%;
+        }
+
         /* Đã nâng cấp hiệu ứng đổ bóng & phát sáng cho H1 */
         h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #ffffff;
+            color: #e6faf6; /* Đã cập nhật màu chữ h1 */
             text-shadow: 
                 0 2px 4px rgba(0, 0, 0, 0.6),
                 0 4px 12px rgba(0, 0, 0, 0.4),
@@ -96,11 +192,10 @@
 <body>
 
     <div class="container">
-        <h1>Chào mừng đến với Subaury! 🚀</h1>
-        <p>Đây là trang web riêng được liên kết từ Avatar của Subaury. Bạn có thể thêm bất kỳ nội dung, hình ảnh hay thông tin nào bạn muốn vào đây! Trang này đang trong giai đoạn thử nghiệm sẽ cập nhật thêm nhiều tính năng mới!</p>
+        <h1> Subaury! 🚀</h1>
+        <p> Fanpage chuyên bán commission, web cá nhân!</p>
         <a href="index.html" class="back-btn">← Quay lại trang chủ</a>
     </div>
 
 </body>
 </html>
-
