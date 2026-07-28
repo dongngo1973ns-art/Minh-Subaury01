@@ -43,7 +43,7 @@
             position: relative;
             z-index: 1;
             
-            /* Nền trong suốt màu trắng đục nhẹ (Không bị đen xì) */
+            /* Nền trong suốt màu trắng đục nhẹ */
             background: rgba(255, 255, 255, 0.15) !important;
             
             /* Hiệu ứng mờ kính chuẩn mọi trình duyệt */
@@ -98,7 +98,6 @@
 
         /* --- 5. TRẠNG THÁI DISCORD TRONG SUỐT --- */
         .discord-status {
-            /* Giảm độ tối xuống mờ nhẹ thay vì đen sì */
             background: rgba(0, 0, 0, 0.25);
             padding: 12px;
             border-radius: 12px;
@@ -153,11 +152,74 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
+
+        /* --- 7. BỘ ĐẾM LƯỢT TRUY CẬP (GÓC DƯỚI BÊN TRÁI) --- */
+        .visit-counter {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 8px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .visit-counter i {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        /* --- 8. THÔNG TIN LIÊN HỆ (GÓC DƯỚI BÊN PHẢI) --- */
+        .bottom-contact {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .bottom-contact a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bottom-contact a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .bottom-contact i {
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- VIDEO NỀN (Khớp chuẩn tên file Download (1).mp4 trên GitHub của bạn) -->
+    <!-- VIDEO NỀN -->
     <video autoplay muted loop id="bg-video">
         <source src="Download (1).mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ video HTML5.
@@ -191,6 +253,34 @@
             </a>
         </div>
     </div>
+
+    <!-- BỘ ĐẾM LƯỢT TRUY CẬP (GÓC DƯỚI BÊN TRÁI) -->
+    <div class="visit-counter">
+        <i class="fa-regular fa-eye"></i>
+        <span id="views">...</span>
+    </div>
+
+    <!-- MỤC LIÊN HỆ (GÓC DƯỚI BÊN PHẢI) -->
+    <div class="bottom-contact">
+        <a href="tel:">
+            <i class="fa-solid fa-phone"></i> 0123 456 789
+        </a>
+        <a href="1450080165@sv.hcmunre.edu.vn">
+            <i class="fa-solid fa-envelope"></i> your-email@gmail.com
+        </a>
+    </div>
+
+    <!-- SCRIPT TÍNH LƯỢT TRUY CẬP -->
+    <script>
+        fetch('https://api.counterapi.dev/v1/subaury-profile/visits/up')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('views').innerText = data.count.toLocaleString();
+            })
+            .catch(() => {
+                document.getElementById('views').innerText = '1';
+            });
+    </script>
 
 </body>
 </html>
