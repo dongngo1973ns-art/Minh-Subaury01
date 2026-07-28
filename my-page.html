@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang web mới của Subaury</title>
+    <!-- Thư viện FontAwesome để hiển thị icon Điện thoại và Email -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -51,7 +54,7 @@
             width: 100%;
         }
 
-        /* Nâng cấp hiệu ứng đổ bóng & phát sáng cho H1 */
+        /* Hiệu ứng đổ bóng & phát sáng cho H1 */
         h1 {
             font-size: 28px;
             font-weight: 700;
@@ -72,12 +75,12 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Khung chứa các nút điều hướng mới */
+        /* Khung chứa các nút điều hướng */
         .nav-buttons {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -97,10 +100,31 @@
             background: #ffffff;
             color: #333;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
-        /* Style riêng cho nút Quay lại trang chủ */
+        /* Mục liên hệ phía dưới */
+        .bottom-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .bottom-contact a {
+            color: #e6faf6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .bottom-contact a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Nút Back */
         .back-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -128,33 +152,26 @@
         <h1>Subaury</h1>
         <p>Fanpage chuyên bán commission, web cá nhân!</p>
 
-        <!-- Danh sách 3 nút điều hướng mới -->
+        <!-- Danh sách 3 nút điều hướng -->
         <div class="nav-buttons">
-          
-            /* Hiệu ứng di chuột sáng lên */
-        .social-links a:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            <a href="Price" class="btn"> Price (Bảng Giá)</a>
-            <a href="samples.html" class="btn"> Samples (Mẫu Thiết Kế)</a>
-            <a href="commission.html" class="btn"> Commission </a>
+            <a href="Price" class="btn">Price (Bảng Giá)</a>
+            <a href="samples.html" class="btn">Samples (Mẫu Thiết Kế)</a>
+            <a href="commission.html" class="btn">Commission</a>
         </div>
 
-        <!-- MỤC LIÊN HỆ (GÓC DƯỚI BÊN PHẢI) -->
-    <div class="bottom-contact">
-        <a href="tel:0765810673">
-            <i class="fa-solid fa-phone"></i> 0765 810 673
-        </a>
-        <a href="mailto:1450080165@sv.hcmunre.edu.vn">
-            <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
-        </a>
-    </div>
+        <!-- MỤC LIÊN HỆ -->
+        <div class="bottom-contact">
+            <a href="tel:0765810673">
+                <i class="fa-solid fa-phone"></i> 0765 810 673
+            </a>
+            <a href="mailto:1450080165@sv.hcmunre.edu.vn">
+                <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
+            </a>
+        </div>
            
-         <!-- Nút quay lại trang chủ -->
-        <a href="index.html" class="back-btn">← Back </a>
+        <!-- Nút quay lại trang chủ -->
+        <a href="index.html" class="back-btn">← Back</a>
     </div>
-    
 
 </body>
 </html>
