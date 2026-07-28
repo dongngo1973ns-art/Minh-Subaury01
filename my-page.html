@@ -14,7 +14,7 @@
 
         body {
             min-height: 100vh;
-            /* Đặt hình nền từ đường dẫn online, phủ kín màn hình */
+            /* Đặt hình nền từ file ảnh cùng thư mục */
             background: url('3192993e72fd3146b6edbe33fe140aab.jpg') no-repeat center center/cover;
             color: #ffffff;
             display: flex;
@@ -51,10 +51,17 @@
             width: 100%;
         }
 
+        /* Đã nâng cấp hiệu ứng đổ bóng & phát sáng cho H1 */
         h1 {
             font-size: 28px;
+            font-weight: 700;
             margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            color: #ffffff;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.6),
+                0 4px 12px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 255, 255, 0.3); /* Phát sáng nhẹ xung quanh chữ */
+            letter-spacing: 0.5px;
         }
 
         p {
@@ -90,9 +97,10 @@
 
     <div class="container">
         <h1>Chào mừng đến với Subaury! 🚀</h1>
-        <p>Đây là trang web riêng được liên kết từ Avatar của Subaury. Bạn có thể thêm bất kỳ nội dung, hình ảnh hay thông tin nào bạn muốn vào đây!Trang này đang trong giai đoạn thử nghiệm sẽ cập nhập thêm nhiều tính năng mới!</p>
+        <p>Đây là trang web riêng được liên kết từ Avatar của Subaury. Bạn có thể thêm bất kỳ nội dung, hình ảnh hay thông tin nào bạn muốn vào đây! Trang này đang trong giai đoạn thử nghiệm sẽ cập nhật thêm nhiều tính năng mới!</p>
         <a href="index.html" class="back-btn">← Quay lại trang chủ</a>
     </div>
 
 </body>
 </html>
+
