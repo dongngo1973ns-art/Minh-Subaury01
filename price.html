@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khung Trong Suốt - Subaury</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      /* Đặt hình nền từ file ảnh trong cùng thư mục */
+      background: url('3192993e72fd3146b6edbe33fe140aab.jpg') no-repeat center center/cover;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* Lớp phủ tối nhẹ để làm nổi bật khung kính */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    /* Khung trong suốt (Glassmorphism Container) */
+    .transparent-box {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 650px;
+      padding: 30px 25px;
+      border-radius: 20px;
+      
+      /* Màu nền trắng trong suốt 15% */
+      background: rgba(255, 255, 255, 0.15); 
+      
+      /* Hiệu ứng làm mờ cảnh vật phía sau khung */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      
+      /* Viền mỏng mờ & Đổ bóng tạo chiều sâu */
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Style cho Bảng 4 Cột x 5 Hàng */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .custom-table th, 
+    .custom-table td {
+      padding: 12px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Chữ Interface ở trên cùng bên trái */
+    .custom-table th.top-left {
+      text-align: left;
+      font-weight: 700;
+      color: #e6faf6;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 16px;
+      text-shadow: 0 0 10px rgba(230, 250, 246, 0.5);
+    }
+
+    .custom-table th {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .custom-table tr:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Nút Quay lại trang my-page.html */
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      color: #111111;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Khung trong suốt -->
+  <div class="transparent-box">
+    
+    <!-- Bảng 4 Cột x 5 Hàng -->
+    <table class="custom-table">
+      <thead>
+        <!-- Hàng 1 -->
+        <tr>
+          <th class="top-left">Interface</th>
+          <th>Cột 2</th>
+          <th>Cột 3</th>
+          <th>Cột 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hàng 2 -->
+        <tr>
+          <td>Mục 1</td>
+          <td>Dữ liệu 1</td>
+          <td>Dữ liệu 2</td>
+          <td>Dữ liệu 3</td>
+        </tr>
+        <!-- Hàng 3 -->
+        <tr>
+          <td>Mục 2</td>
+          <td>Dữ liệu 4</td>
+          <td>Dữ liệu 5</td>
+          <td>Dữ liệu 6</td>
+        </tr>
+        <!-- Hàng 4 -->
+        <tr>
+          <td>Mục 3</td>
+          <td>Dữ liệu 7</td>
+          <td>Dữ liệu 8</td>
+          <td>Dữ liệu 9</td>
+        </tr>
+        <!-- Hàng 5 -->
+        <tr>
+          <td>Mục 4</td>
+          <td>Dữ liệu 10</td>
+          <td>Dữ liệu 11</td>
+          <td>Dữ liệu 12</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- MỤC LIÊN HỆ CỐ ĐỊNH GÓC DƯỚI BÊN PHẢI MÀN HÌNH -->
+    <div class="fixed-bottom-right">
+        <a href="tel:0765810673">
+            <i class="fa-solid fa-phone"></i> 0765 810 673
+        </a>
+        <a href="mailto:1450080165@sv.hcmunre.edu.vn">
+            <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
+        </a>
+    </div>
+   
+    <!-- Nút quay lại trang my-page.html -->
+    <a href="my-page.html" class="back-btn">← Back</a>
+  </div>
+
+</body>
+</html>
