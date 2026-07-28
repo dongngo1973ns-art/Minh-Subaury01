@@ -67,12 +67,16 @@
             letter-spacing: 0.5px;
         }
 
+        /* Thẻ p đã thêm text-transform: uppercase để in hoa toàn bộ */
         p {
-            font-size: 16px;
+            font-size: 15px;
             color: #f0f0f0;
             line-height: 1.6;
             margin-bottom: 25px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
         /* Khung chứa các nút điều hướng */
@@ -103,27 +107,6 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
-        /* Mục liên hệ phía dưới */
-        .bottom-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .bottom-contact a {
-            color: #e6faf6;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-        }
-
-        .bottom-contact a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
         /* Nút Back */
         .back-btn {
             display: inline-block;
@@ -144,6 +127,40 @@
             color: #111;
             transform: translateY(-2px);
         }
+
+        /* MỤC LIÊN HỆ CỐ ĐỊNH Ở GÓC DƯỚI BÊN PHẢI MÀN HÌNH */
+        .fixed-bottom-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 12px 16px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            font-size: 13px;
+        }
+
+        .fixed-bottom-right a {
+            color: #e6faf6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fixed-bottom-right a:hover {
+            color: #ffffff;
+            transform: translateX(-3px);
+        }
     </style>
 </head>
 <body>
@@ -154,23 +171,23 @@
 
         <!-- Danh sách 3 nút điều hướng -->
         <div class="nav-buttons">
-            <a href="Price" class="btn">Price (Bảng Giá)</a>
+            <a href="price.html" class="btn">Price (Bảng Giá)</a>
             <a href="samples.html" class="btn">Samples (Mẫu Thiết Kế)</a>
             <a href="commission.html" class="btn">Commission</a>
-        </div>
-
-        <!-- MỤC LIÊN HỆ -->
-        <div class="bottom-contact">
-            <a href="tel:0765810673">
-                <i class="fa-solid fa-phone"></i> 0765 810 673
-            </a>
-            <a href="mailto:1450080165@sv.hcmunre.edu.vn">
-                <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
-            </a>
         </div>
            
         <!-- Nút quay lại trang chủ -->
         <a href="index.html" class="back-btn">← Back</a>
+    </div>
+
+    <!-- MỤC LIÊN HỆ CỐ ĐỊNH GÓC DƯỚI BÊN PHẢI MÀN HÌNH -->
+    <div class="fixed-bottom-right">
+        <a href="tel:0765810673">
+            <i class="fa-solid fa-phone"></i> 0765 810 673
+        </a>
+        <a href="mailto:1450080165@sv.hcmunre.edu.vn">
+            <i class="fa-solid fa-envelope"></i> 1450080165@sv.hcmunre.edu.vn
+        </a>
     </div>
 
 </body>
