@@ -39,7 +39,7 @@
       z-index: 0;
     }
 
-    /* Khung trong suốt (Glassmorphism Container) */
+    /* Khung trong suốt chính (Glassmorphism Container) */
     .transparent-box {
       position: relative;
       z-index: 1;
@@ -85,30 +85,48 @@
       text-align: center;
     }
 
-    /* HÀNG ĐẦU TIÊN: Cỡ chữ lớn hơn (16px) và nổi bật hơn */
+    /* HÀNG ĐẦU TIÊN: Cỡ chữ lớn hơn (18px) và nổi bật hơn */
     .custom-table th {
       background: rgba(255, 255, 255, 0.15);
       color: #ffffff;
-      font-size: 18px; /* Cỡ chữ lớn hơn một chút */
+      font-size: 18px; 
       font-weight: 700;
       letter-spacing: 0.5px;
     }
 
-   /* Chữ Interface ở góc trên cùng bên trái */
-.custom-table th.top-left {
-  text-align: left;
-  color: #e6faf6;
-  background: rgba(255, 255, 255, 0.25);
-  text-shadow: 0 0 10px rgba(230, 250, 246, 0.5);
-  text-transform: uppercase; /* Tự động đổi chữ thành IN HOA */
-}
+    /* Chữ Interface ở góc trên cùng bên trái */
+    .custom-table th.top-left {
+      text-align: left;
+      color: #e6faf6;
+      background: rgba(255, 255, 255, 0.25);
+      text-shadow: 0 0 10px rgba(230, 250, 246, 0.5);
+      text-transform: uppercase; /* Tự động đổi chữ thành IN HOA */
+    }
+
+    /* Khung trong suốt riêng bao quanh nút Back */
+    .back-btn-wrapper {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .back-btn-wrapper:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
 
     /* Nút Quay lại trang my-page.html */
     .back-btn {
       display: inline-block;
-      padding: 10px 20px;
-      background: rgba(0, 0, 0, 0.3);
+      padding: 10px 24px;
+      background: rgba(0, 0, 0, 0.35);
       color: #ffffff;
       text-decoration: none;
       border-radius: 10px;
@@ -116,14 +134,12 @@
       font-size: 14px;
       font-weight: 600;
       transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
+      letter-spacing: 0.5px;
     }
 
-    .back-btn:hover {
+    .back-btn-wrapper:hover .back-btn {
       background: rgba(255, 255, 255, 0.9);
       color: #111111;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     /* MỤC LIÊN HỆ CỐ ĐỊNH Ở GÓC DƯỚI BÊN PHẢI MÀN HÌNH */
@@ -163,7 +179,7 @@
 </head>
 <body>
 
-  <!-- Khung trong suốt -->
+  <!-- Khung trong suốt chính -->
   <div class="transparent-box">
     
     <!-- Bảng 4 Cột x 5 Hàng -->
@@ -209,8 +225,10 @@
       </tbody>
     </table>
 
-    <!-- Nút quay lại trang my-page.html -->
-    <a href="my-page.html" class="back-btn">← Back</a>
+    <!-- Khung trong suốt bọc nút Back -->
+    <div class="back-btn-wrapper">
+      <a href="my-page.html" class="back-btn">← Back</a>
+    </div>
   </div>
 
   <!-- MỤC LIÊN HỆ CỐ ĐỊNH GÓC DƯỚI BÊN PHẢI MÀN HÌNH -->
