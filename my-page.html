@@ -51,7 +51,7 @@
             width: 100%;
         }
 
-        /* Cập nhật màu H1 thành #e6faf6 cùng hiệu ứng bóng phát sáng */
+        /* Nâng cấp hiệu ứng đổ bóng & phát sáng cho H1 */
         h1 {
             font-size: 28px;
             font-weight: 700;
@@ -59,104 +59,8 @@
             color: #e6faf6;
             text-shadow: 
                 0 2px 4px rgba(0, 0, 0, 0.6),
-                0 0 15px rgba(230, 250, 246, 0.6), /* Phát sáng xanh mint dịu nhẹ */
-                0 0 30px rgba(0, 225, 255, 0.3);
-            letter-spacing: 0.5px;
-        }
-
-        p {
-            font-size: 16px;
-            color: #f0f0f0;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .back-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            font-weight: bold;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .back-btn:hover {
-            background: #ffffff;
-            color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12Mã màu `#e6faf#6` bạn cung cấp bị thừa ký tự `#` ở giữa. Mã HEX chính xác đúng cú pháp CSS sẽ là **`#e6faf6`** (một tông màu xanh lam rất nhạt / xanh mint nhẹ).
-
-Dưới đây là mã HTML hoàn chỉnh đã sửa lại thuộc tính `color` trong class `h1`:
-
-```html
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang web mới của Subaury</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            /* Đặt hình nền từ file ảnh cùng thư mục */
-            background: url('3192993e72fd3146b6edbe33fe140aab.jpg') no-repeat center center/cover;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Lớp phủ tối nhẹ để làm nổi bật khung chữ */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-            max-width: 500px;
-            width: 100%;
-        }
-
-        /* Đã nâng cấp hiệu ứng đổ bóng & phát sáng cho H1 */
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #e6faf6; /* Đã cập nhật màu chữ h1 */
-            text-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.6),
                 0 4px 12px rgba(0, 0, 0, 0.4),
-                0 0 20px rgba(255, 255, 255, 0.3); /* Phát sáng nhẹ xung quanh chữ */
+                0 0 20px rgba(255, 255, 255, 0.3);
             letter-spacing: 0.5px;
         }
 
@@ -168,11 +72,19 @@ Dưới đây là mã HTML hoàn chỉnh đã sửa lại thuộc tính `color` 
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
-        .back-btn {
-            display: inline-block;
-            padding: 12px 24px;
+        /* Khung chứa các nút điều hướng mới */
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            padding: 12px 20px;
             background: rgba(255, 255, 255, 0.2);
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -181,21 +93,52 @@ Dưới đây là mã HTML hoàn chỉnh đã sửa lại thuộc tính `color` 
             backdrop-filter: blur(4px);
         }
 
-        .back-btn:hover {
+        .btn:hover {
             background: #ffffff;
             color: #333;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Style riêng cho nút Quay lại trang chủ */
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #e0e0e0;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #111;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1> Subaury! 🚀</h1>
-        <p> Fanpage chuyên bán commission, web cá nhân!</p>
-        <a href="index.html" class="back-btn">← Quay lại trang chủ</a>
+        <h1>Subaury! 🚀</h1>
+        <p>Fanpage chuyên bán commission, web cá nhân!</p>
+
+        <!-- Danh sách 3 nút điều hướng mới -->
+        <div class="nav-buttons">
+            <a href="Price" class="btn">🏷️ Price (Bảng Giá)</a>
+            <a href="samples.html" class="btn">🖼️ Samples (Mẫu Thiết Kế)</a>
+            <a href="commission.html" class="btn">🎨 Commission (Đặt Hàng)</a>
+        </div>
+
+         <!-- Nút quay lại trang chủ -->
+        <a href="index.html" class="back-btn">← Back </a>
     </div>
+    
 
 </body>
 </html>
