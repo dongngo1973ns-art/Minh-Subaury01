@@ -21,12 +21,10 @@
             background: url('3192993e72fd3146b6edbe33fe140aab.jpg') no-repeat center center/cover;
             color: #ffffff;
             display: flex;
-            flex-direction: column; /* Xếp khung chính và khung nút Back theo chiều dọc */
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 20px;
-            gap: 20px; /* Khoảng cách giữa khung chính và khung nút Back */
             position: relative;
         }
 
@@ -42,7 +40,7 @@
             z-index: 0;
         }
 
-        /* KHUNG TRONG SUỐT CHÍNH */
+        /* KHUNG TRONG SUỐT CHÍNH (SUBAURY) */
         .container {
             position: relative;
             z-index: 1;
@@ -87,6 +85,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -109,32 +108,32 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
         }
 
-        /* KHUNG TRONG SUỐT BÊN DƯỚI DÀNH RIÊNG CHO NÚT BACK */
-        .back-container {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 500px; /* Bằng kích thước khung chính ở trên */
-            padding: 15px;
-            border-radius: 16px;
+        /* KHUNG TRONG SUỐT NHỎ ÔM SÁT NÚT BACK */
+        .back-wrapper {
+            display: inline-block; /* Giúp khung co lại vừa vặn theo kích thước nút */
+            padding: 6px; /* Khoảng cách lề bao quanh nút */
             background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Nút Back */
+        .back-wrapper:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Nút Back màu đen bên trong */
         .back-btn {
             display: inline-block;
-            padding: 10px 30px;
-            background: rgba(0, 0, 0, 0.35);
+            padding: 8px 24px;
+            background: rgba(0, 0, 0, 0.45);
             color: #ffffff;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.25);
             font-size: 14px;
             font-weight: 600;
@@ -142,11 +141,9 @@
             letter-spacing: 0.5px;
         }
 
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.9);
+        .back-wrapper:hover .back-btn {
+            background: #ffffff;
             color: #111111;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         /* MỤC LIÊN HỆ CỐ ĐỊNH Ở GÓC DƯỚI BÊN PHẢI MÀN HÌNH */
@@ -186,6 +183,12 @@
 </head>
 <body>
 
+    <!-- VIDEO NỀN -->
+    <video autoplay muted loop id="bg-video">
+        <source src="1785848693921_126348961149478950_5324582373702206466.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video HTML5.
+    </video>
+
     <!-- KHUNG TRONG SUỐT CHÍNH -->
     <div class="container">
         <h1>Subaury</h1>
@@ -197,11 +200,11 @@
             <a href="samples.html" class="btn">Samples (Mẫu Thiết Kế)</a>
             <a href="commission.html" class="btn">Commission</a>
         </div>
-    </div>
 
-    <!-- KHUNG TRONG SUỐT NẰM RIÊNG BÊN DƯỚI CHỨA NÚT BACK -->
-    <div class="back-container">
-        <a href="index.html" class="back-btn">← Back</a>
+        <!-- TỔ HỢP NÚT BACK (NẰM TRONG KHUNG CHÍNH, KHUNG NGOÀI ÔM SÁT NÚT ĐEN) -->
+        <div class="back-wrapper">
+            <a href="index.html" class="back-btn">← Back</a>
+        </div>
     </div>
 
     <!-- MỤC LIÊN HỆ CỐ ĐỊNH GÓC DƯỚI BÊN PHẢI MÀN HÌNH -->
