@@ -15,10 +15,33 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Lớp phủ tối nhẹ để làm nổi bật khung chữ */
+        body {
+            min-height: 100vh;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* CSS CỐ ĐỊNH CHO VIDEO NỀN FULL MÀN HÌNH */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Lớp phủ tối nhẹ giúp nổi bật nội dung phía trên video */
         body::before {
             content: '';
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -97,8 +120,8 @@
 
         /* KHUNG TRONG SUỐT NHỎ ÔM SÁT NÚT BACK */
         .back-wrapper {
-            display: inline-block; /* Giúp khung co lại vừa vặn theo kích thước nút */
-            padding: 6px; /* Khoảng cách lề bao quanh nút */
+            display: inline-block;
+            padding: 6px;
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
@@ -170,8 +193,8 @@
 </head>
 <body>
 
-    <!-- VIDEO NỀN -->
-    <video autoplay muted loop id="bg-video">
+    <!-- VIDEO NỀN PHÁT TỰ ĐỘNG LẶP LẠI -->
+    <video autoplay muted loop playsinline id="bg-video">
         <source src="1785848693921_126348961149478950_5324582373702206466.mp4" type="video/mp4">
         Trình duyệt của bạn không hỗ trợ video HTML5.
     </video>
@@ -188,7 +211,7 @@
             <a href="commission.html" class="btn">Commission</a>
         </div>
 
-        <!-- TỔ HỢP NÚT BACK (NẰM TRONG KHUNG CHÍNH, KHUNG NGOÀI ÔM SÁT NÚT ĐEN) -->
+        <!-- TỔ HỢP NÚT BACK (ÔM SÁT NÚT ĐEN) -->
         <div class="back-wrapper">
             <a href="index.html" class="back-btn">← Back</a>
         </div>
